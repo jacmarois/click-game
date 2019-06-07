@@ -1,0 +1,80 @@
+<!--Jacinto Marois
+OS Project 2
+Game container webpage-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>OS Project 2 - Jacinto Marois</title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+			body{
+				background: #2f3f5f;
+				color: #efefef;
+			}
+			#gamecontainer{
+				width: 1250px;
+				height: 610px;
+				border: 5px solid #445;
+				margin-left: auto;
+				margin-right: auto;
+				display: block;
+				position: relative;
+			}
+			#pdata{
+				width: 200px;
+				height: 600px;
+				padding: 5px 5px;
+				display: inline-block;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			#game{
+				width: 800px;
+				height: 600px;
+				background: #223;
+				display: inline-block;
+				position: absolute;
+				top: 0;
+				left: 225px;
+			}
+			#leaderboard{
+				width: 200px;
+				height: 600px;
+				padding: 5px 5px;
+				display: inline-block;
+				position: absolute;
+				top: 0;
+				left: 85%;
+			}
+			#players{
+				list-style-type: none;
+			}
+			h1,h3,h6 {
+				text-align: center;
+			}
+		</style>
+		<script src="/socket.io/socket.io.js"></script> <!--This is automatically added when the socket.io is installed-->
+	</head>
+	<body>
+		<h1>Clicking Game</h1>
+		<div id="gamecontainer">
+			<div id="pdata">
+				<h2 id="pnum">0</h2>
+				<h2 id="points">0</h3>
+			</div>
+			<canvas id="game"></canvas>
+			<div id="leaderboard">
+				<h2>Leaderboard:</h2>
+				<ul id="players"></ul>
+			</div>
+		</div>
+		<h3>The game is simple: click the button before all of the other players, score points!</h3>
+		<h6>glhf!</h6>
+	</body>
+	<script src="/static/game.js"></script>	<!--Load the game-->
+</html>
